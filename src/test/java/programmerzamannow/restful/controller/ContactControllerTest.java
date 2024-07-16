@@ -147,7 +147,7 @@ class ContactControllerTest {
             });
             assertNull(response.getErrors());
 
-            assertEquals(contact.getId(), response.getData().getId());
+            assertEquals(contact.getId(), response.getData().getId()w);
             assertEquals(contact.getFirstName(), response.getData().getFirstName());
             assertEquals(contact.getLastName(), response.getData().getLastName());
             assertEquals(contact.getEmail(), response.getData().getEmail());
