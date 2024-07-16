@@ -108,7 +108,7 @@ class ContactControllerTest {
     }
 
     @Test
-    void testContactNotFound() throws Exception {
+    void testGetContactNotFound() throws Exception {
         mockMvc.perform(
                 get("/api/contacts/3453564352")
                         .accept(MediaType.APPLICATION_JSON)
@@ -214,6 +214,50 @@ class ContactControllerTest {
             assertEquals(request.getEmail(), response.getData().getEmail());
 
             assertTrue(contactRepository.existsById(response.getData().getId()));
+        });
+    }
+
+    @Test
+    void testDeleteContactNotFound() throws Exception {
+        mockMvc.perform(
+                delete("/api/contacts/3453564352")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .header("X-API-TOKEN", "test")
+        ).andExpectAll(
+                status().isNotFound()
+        ).andDo(result -> {
+            WebResponse<String> response = objectMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<WebResponse<String>>() {
+            });
+            assertNotNull(response.getErrors());
+        });
+    }
+
+    @Test
+    void testDeleteContactSuccess() throws Exception {
+        User user = userRepository.findById("test").orElseThrow();
+
+        Contact contact = new Contact();
+        contact.setId(UUID.randomUUID().toString());
+        contact.setUser(user);
+        contact.setFirstName("Ardiansyah");
+        contact.setLastName("Sulistyo");
+        contact.setEmail("ardiansyah@example.com");
+        contact.setPhone("088465762563");
+        contactRepository.save(contact);
+
+        mockMvc.perform(
+                delete("/api/contacts/" + contact.getId())
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .header("X-API-TOKEN", "test")
+        ).andExpectAll(
+                status().isOk()
+        ).andDo(result -> {
+            WebResponse<String> response = objectMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<>() {
+            });
+            assertNull(response.getErrors());
+            assertEquals("OK", response.getData());
         });
     }
 }
