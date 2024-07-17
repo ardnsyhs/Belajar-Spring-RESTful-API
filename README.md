@@ -32,7 +32,7 @@ Response Body (Failed) :
 }
 ```
 
-## Login User
+### Login User
 
 Endpoint : POST /api/auth/login
 
@@ -64,7 +64,7 @@ Response Body (Failed, 401) :
 }
 ```
 
-## Get User
+### Get User
 
 Endpoint :GET /api/users/current
 
@@ -91,7 +91,7 @@ Response Body (Failed, 401) :
 }
 ```
 
-## Update User
+### Update User
 
 Endpoint : PATCH /api/users/current
 
@@ -127,7 +127,7 @@ Response Body (Failed, 401) :
 }
 ```
 
-## Logout User
+### Logout User
 
 Endpoint : DELETE /api/auth/logout
 
