@@ -88,7 +88,7 @@ Response Body (Failed) :
 
 ## Get Address
 
-Endpoint : GET api/contacts/{idContact/addresses/{idAddress}
+Endpoint : GET api/contacts/{idContact}/addresses/{idAddress}
 
 Request Header :
 

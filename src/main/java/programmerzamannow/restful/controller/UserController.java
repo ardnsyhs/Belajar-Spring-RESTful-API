@@ -2,7 +2,9 @@ package programmerzamannow.restful.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import programmerzamannow.restful.entity.User;
 import programmerzamannow.restful.model.RegisterUserRequest;
 import programmerzamannow.restful.model.UpdateUserRequest;
@@ -15,7 +17,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
+ 
     @PostMapping(
             path = "api/users",
             consumes = MediaType.APPLICATION_JSON_VALUE,
@@ -43,5 +45,23 @@ public class UserController {
     public WebResponse<UserResponse> update(User user, @RequestBody UpdateUserRequest request){
         UserResponse userResponse = userService.update(user, request);
         return WebResponse.<UserResponse>builder().data(userResponse).build();
+    }
+
+    @GetMapping("/register")
+    public String showRegistrationForm(Model model) {
+        model.addAttribute("registerUserRequest", new RegisterUserRequest());
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String registerUser(@RequestBody RegisterUserRequest request, Model model) {
+        try {
+            userService.register(request);
+            model.addAttribute("message", "User registered successfully");
+            return "login";
+        } catch (ResponseStatusException e) {
+            model.addAttribute("error", e.getMessage());
+            return "register";
+        }
     }
 }
