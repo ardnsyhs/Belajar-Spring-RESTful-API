@@ -10,9 +10,9 @@ Request Body :
 
 ```json
 {
-  "username": "iyan",
-  "password": "rahasia",
-  "name": "Ardiansyah Sulistyo"
+  "username": "johndoe",
+  "password": "johndoe",
+  "name": "John Doe"
 }
 ```
 
@@ -40,8 +40,8 @@ Request Body :
 
 ```json
 {
-  "username": "iyan",
-  "password": "rahasia"
+  "username": "johndoe",
+  "password": "johndoe"
 }
 ```
 
@@ -77,8 +77,8 @@ Response Body (Success) :
 ```json
 {
   "data": {
-    "username": "iyan",
-    "name": "Ardiansyah Sulistyo"
+    "username": "johndoe",
+    "name": "John Doe"
   }
 }
 ```
@@ -103,7 +103,7 @@ Request Body :
 
 ```json
 {
-  "name": "Ardiansyah", // put if only want to ypdate name
+  "name": "John", // put if only want to ypdate name
   "password": "new password" // put if only want to update password
 }
 ```
@@ -113,8 +113,8 @@ Response Body (Success) :
 ```json
 {
   "data": {
-    "username": "iyan",
-    "name": "Ardiansyah Sulistyo"
+    "username": "johndoe",
+    "name": "John Doe"
   }
 }
 ```
@@ -159,10 +159,10 @@ Request Body :
 
 ```json
 {
-  "firstname": "Ardiansyah",
-  "lastname": "Sulistyo",
-  "email": "ardiansyah@example.com",
-  "phone": "0813234453234"
+  "firstname": "John",
+  "lastname": "Doe",
+  "email": "johndoe@example.com",
+  "phone": "08xxxxxxxxxxx"
 }
 ```
 
@@ -172,10 +172,10 @@ Response Body (Success) :
 {
   "data": {
     "id": "random-string",
-    "firstname": "Ardiansyah",
-    "lastname": "Sulistyo",
-    "email": "ardiansyah@example.com",
-    "phone": "0813234453234"
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@example.com",
+    "phone": "08xxxxxxxxxxx"
   }
 }
 ```
@@ -200,9 +200,9 @@ Request Body :
 
 ```json
 {
-  "firstname": "Ardiansyah",
-  "lastname": "Sulistyo",
-  "email": "ardiansyah@example.com",
+  "firstname": "John",
+  "lastname": "Doe",
+  "email": "johndoe@example.com",
   "phone": "0813234453234"
 }
 ```
@@ -213,9 +213,9 @@ Response Body (Success) :
 {
   "data": {
     "id": "random-string",
-    "firstname": "Ardiansyah",
-    "lastname": "Sulistyo",
-    "email": "ardiansyah@example.com",
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@example.com",
     "phone": "0813234453234"
   }
 }
@@ -243,10 +243,10 @@ Response Body (Success) :
 {
   "data": {
     "id": "random-string",
-    "firstname": "Ardiansyah",
-    "lastname": "Sulistyo",
-    "email": "ardiansyah@example.com",
-    "phone": "0813234453234"
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "johndoe@example.com",
+    "phone": "08xxxxxxxxxxx"
   }
 }
 ```
@@ -282,10 +282,10 @@ Response Body (Success) :
   "data": [
     {
       "id": "random-string",
-      "firstname": "Ardiansyah",
-      "lastname": "Sulistyo",
-      "email": "ardiansyah@example.com",
-      "phone": "0813234453234"
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "johndoe@example.com",
+      "phone": "08xxxxxxxxxxx"
     }
   ],
   "paging": {
@@ -344,7 +344,7 @@ Request Body :
 
 ```json
 {
-  "street": "Jalan apa",
+  "street": "Jalan",
   "city": "Kota",
   "province": "Provinsi",
   "country": "Negara",
@@ -358,7 +358,7 @@ Response Body (Success) :
 {
   "data": {
     "id": "random-string",
-    "street": "Jalan apa",
+    "street": "Jalan",
     "city": "Kota",
     "province": "Provinsi",
     "country": "Negara",
@@ -387,7 +387,7 @@ Request Body :
 
 ```json
 {
-  "street": "Jalan apa",
+  "street": "Jalan",
   "city": "Kota",
   "province": "Provinsi",
   "country": "Negara",
@@ -401,7 +401,7 @@ Response Body (Success) :
 {
   "data": {
     "id": "random-string",
-    "street": "Jalan apa",
+    "street": "Jalan",
     "city": "Kota",
     "province": "Provinsi",
     "country": "Negara",
@@ -432,7 +432,7 @@ Response Body (Success) :
 {
   "data": {
     "id": "random-string",
-    "street": "Jalan apa",
+    "street": "Jalan",
     "city": "Kota",
     "province": "Provinsi",
     "country": "Negara",
@@ -488,7 +488,7 @@ Response Body (Success) :
   "data": [
     {
       "id": "random-string",
-      "street": "Jalan apa",
+      "street": "Jalan",
       "city": "Kota",
       "province": "Provinsi",
       "country": "Negara",
