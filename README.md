@@ -311,7 +311,7 @@ Endpoint : DELETE api/contacts/{idContact}
 Request Header :
 
 - X-API-TOKEN : Token (Mandatory)
-- 
+
 Response Body (Success) :
 
 ```json
